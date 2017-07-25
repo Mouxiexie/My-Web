@@ -1,0 +1,149 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>我的网站</title>
+
+<link href="我的.css" rel="stylesheet" type="text/css">
+</head>
+
+<body >
+<div id="top">
+     <div id="background">
+       <li><a href="#"><img src="https://github.com/Mouxiexie/img/blob/master/M1.jpg?raw=true"/></a></li>
+       <li><a href="#"><img src="https://github.com/Mouxiexie/img/blob/master/M2.jpg?raw=true"/></a></li>
+       <li><a href="#"><img src="https://github.com/Mouxiexie/img/blob/master/M3.jpg?raw=true"/></a></li>
+       <li><a href="#"><img src="https://github.com/Mouxiexie/img/blob/master/M4.jpg?raw=true"/></a></li>
+       <li><a href="#"><img src="https://github.com/Mouxiexie/img/blob/master/M5.jpg?raw=true"/></a></li>
+     </div>
+  
+	<div id="top-top">
+		<div id="top-top-left">
+			<h1>welcome my web</h1>
+		</div>
+		<div id="top-top-mid">
+			<ul id="xuan">
+				<li>电池剧</li>
+				<li>综艺</li>
+				<li>电影</li>
+				<li>体育</li>
+				<li>音乐</li>
+			</ul>
+			</div>
+		<div id="discover">
+		    <button id="but1" type="button"></button>
+			<input id="inp" value="我的故事" type="text"></input>
+			<button id="but2" type="button">搜索</button>
+			</div>
+		<div id="top-top-right"></div>
+	</div>
+	<div id="top-left">
+	  <ul id="li-s">
+     	 <!--<svg height="400px" width="300px">
+      	<g fill="none">
+      		<path style="stroke="red" stroke-width="20px" d="M0 0 L300 0"/>
+      		<path stroke="red" stroke-width="20px" d="M0 400 L300 400"/>
+      	</g>
+      </svg>-->
+      	<li>我的首页</li>
+      	<li>我的故事</li>
+      	<li>我的人生</li>
+      	<li>我的秘密</li>
+      	<li>我的未来</li>
+      </ul>
+	 <!--<svg width="100%" height="100%" version="1.1"xmlns="http://www.w3.org/2000/svg">
+    <rect id="pa" x="0" y="0" width="300" height="400"
+      style="fill:#ff6428;;stroke:red;stroke-width:5;
+      fill-opacity:0.1;stroke-opacity:0.5"/>-->
+		
+	</div>
+</div>
+<div id="body">
+	
+</div>
+<script>
+	window.onload=function()
+	{
+		var Top=document.getElementById("top");
+		var Topleft=document.getElementById("top-left");
+		var Ul=document.getElementById("li-s");
+		var Lis=Ul.getElementsByTagName("li");
+		var Back=document.getElementById("background");
+		var Lias=Back.getElementsByTagName("a");
+		//数组的方式；不能加超链接；
+		//var IWW=["img/M1.jpg",
+				  //"img/M2.jpg",
+				  //"img/M3.jpg",
+				  //"img/M4.jpg",
+				  //"img/M5.jpg",];
+		var now=0;
+		Topleft.style.right="8%";
+		//适应屏幕
+		window.onresize=function()
+		{
+		   
+		   var Wid=window.outerWidth;
+			//alert(Wid);
+			if(Wid<=1240)
+				{
+			    Topleft.style.left="";
+			    Topleft.style.right="5%";
+		}
+			else if(1240<Wid<=1920)
+				{
+			    Topleft.style.left="";
+			    Topleft.style.right="8%";
+				}
+		//alert(widd)
+	}
+		//改变选项卡样式
+		
+		for(var i=0;i<Lis.length;i++)
+		{
+			Lis[i].index=i;
+			Lis[i].onmouseover=function()
+			
+			{
+				//alert(this.index);
+				clearInterval(timer);
+				//var hunghung=IWW[this.index];
+				for(var i=0;i<Lis.length;i++)
+					{
+						Lis[i].style.background="#22E4DB";
+						Lias[i].style.display="none";
+					}
+				Lis[this.index].style.background="yellow";
+				Lias[this.index].style.display="block";
+				//Top.style.backgroundImage="url("+hunghung+")";
+			}
+			Lis[i].onmouseout=function()
+			{
+				now=this.index;
+				timer=setInterval(show,4000);
+			}
+		}
+		//轮播
+		timer=setInterval(show,4000);
+		function show(){
+			now++;
+			if(now==Lis.length)
+				{
+					now=0;
+				};
+			//var hhh=IWW[now];
+			//Top.style.backgroundImage="url("+hhh+")";
+			for(var i=0;i<Lis.length;i++)
+					{
+						Lis[i].style.background="";
+						Lis[i].style.color="";
+						Lias[i].style.display="none";
+					}
+					
+				Lis[now].style.background="white";
+			    Lis[now].style.color="red";
+			    Lias[now].style.display="block";
+		}
+	}
+	</script>
+</body>
+</html>
