@@ -8,7 +8,7 @@ button{outline:none;}
 #body{height:2000px;width: auto;}
 #top-top{position: absolute; height: 50px;width: auto;}
 #top-left{position: absolute; margin-top: 80px;height:150px;width: 200px;opacity: 0.7;}
-#top-left ul li{width:150px;height:50px;display: block;text-align: center;line-height: 50px;font-size:30px;}
+#top-left ul li{width:150px;height:50px;display: block;text-align: center;line-height: 50px;font-size:15px;}
 #top-left ul{position: absolute;width: 150px;height: 250px;}
 #top-top-left{height: 50PX;width:250px;color:white;line-height: 50px;margin-left: 50px;text-shadow: 2px 2px 2px white;font-style:italic;float: left;}
 #top-top-mid{width:250px;height:50px;float: left;color:white;}
