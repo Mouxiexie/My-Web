@@ -4,16 +4,16 @@
  padding: 0;}
 input {outline:none;}
 button{outline:none;}
-#top{ height: 500px;width: auto;background-color: #A9A9A9;}
-#body{height:2000px;width: auto;}
-#top-top{position: absolute; height: 50px;width: auto;}
-#top-left{position: absolute; margin-top: 80px;height:150px;width: 200px;opacity: 0.7;}
-#top-left ul li{width:150px;height:50px;display: block;text-align: center;line-height: 50px;font-size:15px;}
-#top-left ul{position: absolute;width: 150px;height: 250px;}
-#top-top-left{height: 50PX;width:250px;color:white;line-height: 50px;margin-left: 50px;text-shadow: 2px 2px 2px white;font-style:italic;float: left;}
-#top-top-mid{width:250px;height:50px;float: left;color:white;}
-#xuan li{height: 30px;display: block;float: left;margin-left: 10px;margin-top: 15px; text-align: center;line-height: 30px;}
-#discover{float: left;margin-top: 13px;opacity: 0.8;}
+#top{ height: 500px;width:100%;background-color: #A9A9A9;}
+#body{height:2000px;width:100%;}
+#top-top{position: absolute; height: 50px;width:100%;}
+#top-left{position: absolute; margin-top: 5%;height: 400px;width: 300px;opacity: 0.7;right: 8%;}
+#top-left ul li{width: 300px;height: 80px;display: block;text-align: center;line-height: 80px;font-size:20px;}
+#top-left ul{position: absolute;width: 300px;height: 400px;}
+#top-top-left{height: 50PX;width:250px;color:white;line-height: 50px;margin-left: 8%;text-shadow: 2px 2px 2px white;font-style:italic;float: left;}
+#top-top-mid{width:250px;height:50px;float: left;color:white;margin-top:0.5%;}
+#xuan li{height: 30px;display: block;float: left;margin-left: 3%;margin-top:5%; text-align: center;line-height: 30px;}
+#discover{float: left;margin-top:1%;opacity: 0.8;}
 #but2{width: 50px;height: 34px; border-bottom-right-radius: 40px;border-top-right-radius:40px;float: left;border: 2px solid #EBA510;}
 #inp{margin-left: 0px;
 	 height: 30px;
