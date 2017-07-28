@@ -6,15 +6,15 @@ input {outline:none;}
 button{outline:none;}
 #top{ height: 500px;width:100%;background-color: #A9A9A9;}
 #body{height:2000px;width:100%;}
-#top-top{position: absolute; height: 50px;width:100%;}
-#top-left{position: absolute; margin-top: 5%;height: 400px;width: 300px;opacity: 0.7;right: 8%;}
-#top-left ul li{width: 300px;height: 80px;display: block;text-align: center;line-height: 80px;font-size:20px;}
-#top-left ul{position: absolute;width: 300px;height: 400px;}
-#top-top-left{height: 50PX;width:250px;color:white;line-height: 50px;margin-left:5%;text-shadow: 2px 2px 2px white;font-style:italic;float: left;}
-#top-top-mid{width:250px;height:50px;float: left;color:white;margin-top:0.5%;}
-#xuan li{height: 30px;display: block;float: left;margin-left: 3%;margin-top:5%; text-align: center;line-height: 30px;}
-#discover{float: left;margin-top:1%;opacity: 0.8;}
-#but2{width: 50px;height: 34px; border-bottom-right-radius: 40px;border-top-right-radius:40px;float: left;border: 2px solid #EBA510;}
+#top-top{position: relative; height: 50px;width:1920px;}
+#top-left{position: absolute; margin-top: 3%;height: 300px;width: 200px;opacity: 0.7;right:5%;}
+#top-left ul li{width: 200px;height: 60px;display: block;text-align: center;line-height: 60px;font-size:15px;}
+#top-left ul{position: absolute;width:200px;height: 300px;}
+#top-top-left{height: 50PX;width:300px;color:white;line-height: 50px;margin-left:20px;text-shadow: 2px 2px 2px white;font-style:italic;float: left;font-weight: bold;overflow: hidden;font-size: 20px;}
+#top-top-mid{width:220px;height:50px;float: left;color:white;margin-top:8px;overflow: hidden;margin-left: 10px;}
+#xuan li{height: 30px;display: block;float: left;margin-left: 3%;margin-top:5%; text-align: center;line-height: 30px;font-size: 15px;font-weight: bold;}
+#discover{float: left;margin-top:12px;opacity: 0.8;overflow: hidden;margin-left: 10px;}
+#but2{width: 50px;height: 34px; border-bottom-right-radius: 40px;border-top-right-radius:40px;float: left;border: 2px solid #EBA510;background: #DBD8D8;}
 #inp{margin-left: 0px;
 	 height: 30px;
 	 width: 300px;
@@ -34,7 +34,9 @@ button{outline:none;}
 	  border-bottom:2px solid #EBA510 ;
 	  border-right:0px;
 	  float: left;
+	  background: #DBD8D8;
      }
 #background{position: absolute;height: 500px;}
 #background li{height: 500px;position: absolute;float: left;display: block;}
+ 
  
