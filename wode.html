@@ -1,10 +1,9 @@
-<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>我的网站</title>
 
- <link rel="stylesheet" href="https://mouxiexie.github.io/My-Web/wode.css"/>
+ <link rel="stylesheet" href="我的.css"/>
 </head>
 
 <body >
@@ -21,15 +20,71 @@
 		<div id="top-top-left">
 			<h1>welcome my web</h1>
 		</div>
-		<div id="top-top-mid">
-			<ul id="xuan">
-				<li>电池剧</li>
-				<li>综艺</li>
-				<li>电影</li>
-				<li>体育</li>
-				<li>音乐</li>
+		
+	<div id="top-top-mid">
+			<ul id="mmk">
+				<li id="ka0">
+		           <div id="kka0"> 
+		             <a href="#">电池剧</a>
+		           </div>
+				   <div id="ka-0">
+				     <div class="ka00"></div>
+				     <div class="ka000"></div>
+				     <div class="ka0">
+				     	<a href="#">jjjjjj</a>
+				     </div>
+			       </div>
+				</li>
+				<li id="ka1">
+		             <div id="kka1">
+			           <a href="#">综艺</a>
+			         </div>
+				   <div id="ka-1">
+				     <div class="ka11"></div>
+				     <div class="ka111"></div>
+				     <div class="ka1">
+			             <div class="kaa0">
+				           <a href="#">极限挑战</a>
+				           <a href="#">极限挑战</a><br>
+				           <a href="#">极限挑战</a>
+				           <a href="#">极限挑战</a><br>
+				           <a href="#">极限挑战</a>
+				         </div>
+					 </div>
+				   </div>
+				</li>
+				<li id="ka2">
+		           <div id="kka2">
+			           <a href="#">电影</a>
+			       </div>
+				   <div id="ka-2">
+				     <div class="ka22"></div>
+				     <div class="ka222"></div>
+				     <div class="ka2"></div>
+			       </div> 
+				</li>
+				<li id="ka3">
+		           <div id="kka3">
+			          <a href="#">体育</a>
+			       </div>
+				   <div id="ka-3">
+				    <div class="ka33"></div>
+				    <div class="ka333"></div>
+				    <div class="ka3"></div>
+			       </div>
+				</li>
+				<li id="ka4">
+		           <div id="kka4">
+			         <a href="#">音乐</a>
+			       </div>
+				   <div id="ka-4">
+				     <div class="ka44"></div>
+				     <div class="ka444"></div>
+				     <div class="ka4"></div>
+				   </div>
+				</li>
 			</ul>
-			</div>
+       </div>
 		<div id="discover">
 		    <button id="but1" type="button"></button>
 			<input id="inp" value="我的故事" type="text"></input>
@@ -68,8 +123,10 @@
 		var Topleft=document.getElementById("top-left");
 		var Ul=document.getElementById("li-s");
 		var Lis=Ul.getElementsByTagName("li");
+		
 		var Back=document.getElementById("background");
 		var Lias=Back.getElementsByTagName("a");
+	    //alert(Kas.length);
 		//数组的方式；不能加超链接；
 		//var IWW=["img/M1.jpg",
 				  //"img/M2.jpg",
@@ -84,9 +141,9 @@
 				{
 			    Topleft.style.left="";
 			    Topleft.style.right="1%";
-		}
-        window.onresize=function()
-		{
+		        }
+     window.onresize=function()
+		 {
 		   
 		   var Wid=window.outerWidth;
 			//alert(Wid);
@@ -95,7 +152,7 @@
 				{
 			    Topleft.style.left="";
 			    Topleft.style.right="1%";
-		}
+		        }
 			else if(1240<Wid<=1920)
 				{
 			    Topleft.style.left="";
@@ -104,14 +161,12 @@
 			
 			
 		//alert(widd)
-	}
-		//改变选项卡样式
-		
-		for(var i=0;i<Lis.length;i++)
-		{
+	    }
+//导航***********************************************************************
+   for(var i=0;i<Lis.length;i++)
+		{   
 			Lis[i].index=i;
 			Lis[i].onmouseover=function()
-			
 			{
 				//alert(this.index);
 				clearInterval(timer);
@@ -120,9 +175,11 @@
 					{
 						Lis[i].style.background="#22E4DB";
 						Lias[i].style.display="none";
+						Lis[i].style.color="white";	
 					}
 				Lis[this.index].style.background="yellow";
 				Lias[this.index].style.display="block";
+				Lis[this.index].style.color="red";
 				//Top.style.backgroundImage="url("+hunghung+")";
 			}
 			Lis[i].onmouseout=function()
@@ -131,7 +188,7 @@
 				timer=setInterval(show,4000);
 			}
 		}
-		//轮播
+//轮播******************************************************************
 		timer=setInterval(show,4000);
 		function show(){
 			now++;
@@ -151,8 +208,9 @@
 				Lis[now].style.background="white";
 			    Lis[now].style.color="red";
 			    Lias[now].style.display="block";
-		}
-	}
+		} 
+//菜单****************************************************************
+}
 	</script>
 </body>
 </html>
