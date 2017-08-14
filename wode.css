@@ -11,7 +11,7 @@ button{outline:none;}
 #top-left ul li{width: 200px;height: 60px;display: block;text-align: center;line-height: 60px;font-size:15px;}
 #top-left ul{position: absolute;width:200px;height: 300px;}
 #top-top-left{height: 50PX;width:300px;color:white;line-height: 50px;margin-left:20px;text-shadow: 2px 2px 2px white;font-style:italic;float: left;font-weight: bold;overflow: hidden;font-size: 20px;}
-#top-top-mid{width:220px;height:300px;float: left;color:white;text-align: center;}
+#top-top-mid{width:220px;height:300px;float: left;color:white;text-align: center;margin-left:5px;}
 #mmk{margin-top: 22px;}
 #top-top-mid li a{text-decoration:none;}
 #top-top-mid li{display: inline-block;}
