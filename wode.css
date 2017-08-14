@@ -11,13 +11,16 @@ button{outline:none;}
 #top-left ul li{width: 200px;height: 60px;display: block;text-align: center;line-height: 60px;font-size:15px;}
 #top-left ul{position: absolute;width:200px;height: 300px;}
 #top-top-left{height: 50PX;width:300px;color:white;line-height: 50px;margin-left:20px;text-shadow: 2px 2px 2px white;font-style:italic;float: left;font-weight: bold;overflow: hidden;font-size: 20px;}
-#top-top-mid{width:220px;height:50px;float: left;color:white;margin-top:8px;overflow: hidden;margin-left: 10px;}
-#xuan li{height: 30px;display: block;float: left;margin-left: 3%;margin-top:5%; text-align: center;line-height: 30px;font-size: 15px;font-weight: bold;}
+#top-top-mid{width:220px;height:300px;float: left;color:white;text-align: center;}
+#mmk{margin-top: 22px;}
+#top-top-mid li a{text-decoration:none;}
+#top-top-mid li{display: inline-block;}
+#kka0 a,#kka1 a,#kka2 a,#kka3 a,#kka4 a{color: white;font-weight: bold;}
 #discover{float: left;margin-top:12px;opacity: 0.8;overflow: hidden;margin-left: 10px;}
 #but2{width: 50px;height: 34px; border-bottom-right-radius: 40px;border-top-right-radius:40px;float: left;border: 2px solid #EBA510;background: #DBD8D8;}
 #inp{margin-left: 0px;
-	 height: 30px;
-	 width: 300px;
+	 height: 34px;
+	 width: 400px;
 	 float: left;
 	 background: #DBD8D8;
 	 border-top:2px solid #EBA510 ;
@@ -38,5 +41,76 @@ button{outline:none;}
      }
 #background{position: absolute;height: 500px;}
 #background li{height: 500px;position: absolute;float: left;display: block;}
- 
- 
+#ka-0,#ka-1,#ka-2,#ka-3,#ka-4{height:200px;width:220px;position:absolute;margin-top:10px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);display: none;
+                              left: 320px;
+                             }
+.ka00,.ka000{ border: 10px solid transparent;
+       border-bottom: 10px solid red;
+       width: 0px;
+       height: 0px;
+	   margin-left:20px;
+	   margin-top:-20px;
+     }
+.ka0{width:220px;height: 200px;background: white;margin-top:-4px;border-bottom:0px;border-left:0px;border-right:0px;border-top: 2px solid red;}
+.ka000{
+	   margin-top: -18px;
+       border-bottom: 10px solid white;position: absolute;}
+.ka11,.ka111{ border: 10px solid transparent;
+       border-bottom: 10px solid red;
+       width: 0px;
+       height: 0px;
+	   margin-left:70px;
+	   margin-top:-20px;
+     }
+.ka1{width:220px;height: 200px;margin-top:-4px;background: white;border-bottom:0px;border-left:0px;border-right:0px;border-top: 2px solid red;}
+.kaa0{padding: 5px;}
+.ka111{
+	   margin-top: -18px;
+       border-bottom: 10px solid white;position: absolute;}
+.ka22,.ka222{ border: 10px solid transparent;
+       border-bottom: 10px solid red;
+       width: 0px;
+       height: 0px;
+	   margin-left:98px;
+	   margin-top:-20px;
+     }
+.ka2{width:220px;height: 200px;background: white;margin-top:-4px;border-bottom:0px;border-left:0px;border-right:0px;border-top: 2px solid red;}
+
+.ka222{
+	   margin-top: -18px;
+       border-bottom: 10px solid white;position: absolute;}
+.ka33,.ka333{ border: 10px solid transparent;
+       border-bottom: 10px solid red;
+       width: 0px;
+       height: 0px;
+	   margin-left:135px;
+	   margin-top:-20px;
+     }
+.ka3{width:220px;height: 200px;background: white;margin-top:-4px;border-bottom:0px;border-left:0px;border-right:0px;border-top: 2px solid red;}
+.ka333{
+	   margin-top: -18px;
+       border-bottom: 10px solid white;position: absolute;}
+.ka44,.ka444{ border: 10px solid transparent;
+       border-bottom: 10px solid red;
+       width: 0px;
+       height: 0px;
+	   margin-left:171px;
+	   margin-top:-20px;
+     }
+.ka4{width:220px;height: 200px;background: white;margin-top:-4px;border-bottom:0px;border-left:0px;border-right:0px;border-top: 2px solid red;}
+.ka444{
+	   margin-top: -18px;
+       border-bottom: 10px solid white;position: absolute;}
+#ka0:hover #ka-0{display:block;}
+#ka1:hover #ka-1{display:block;}
+#ka2:hover #ka-2{display:block;}
+#ka3:hover #ka-3{display:block;}
+#ka4:hover #ka-4{display:block;}
+
+.ka1 a:hover{background: #2FDC5E;}
+
+
+
+
+
+
