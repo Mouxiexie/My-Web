@@ -88,20 +88,21 @@
 		   bkj.innerHTML=time;
 		 };
 		getDate();
-		timer=setInterval(function(){getDate()},1000);
+		timer1=setInterval(function(){getDate()},1000);
 		var div2=document.getElementById("div2");
 		var div3=document.getElementById("div3");
 		var div4=document.getElementById("div4");
 		div2.onclick=function(){
 			
 			bkj.innerHTML="00:00:00";
-			clearInterval(timer);
+			clearInterval(timer1);
+			clearInterval(timer2);
 		} 
 		div3.onclick=function(){
 			var scd=0; 
 			var mut=0;
 			var hur=0;
-			  timer=setInterval(function(){
+			  timer2=setInterval(function(){
 				  scd=scd+1;
 				  if(scd<10){
 					var time=hur+":"+mut+":"+"0"+scd;
@@ -159,7 +160,8 @@
 		}
 	      div4.onclick=function()
 	      {
-		  timer=setInterval(function(){getDate()},1000);    
+		  timer1=setInterval(function(){getDate()},1000); 
+		  clearInterval(timer2);
 	      }
 	}
 	
