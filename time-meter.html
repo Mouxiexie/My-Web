@@ -7,20 +7,21 @@
 	.div1{
 		height:100px;
 		width:600px;
-		background: #110F0F;
+		background: ;
 		color: red;
 		font-weight: bold;
 		border-radius:100px;
+		border: #0A0A0A solid 2px;
 		text-align: center;
 		line-height:100px;
-		font-size:70px;
+		font-size:50px;
 		margin:auto;
 		
 	}
-	#div2,#div3,#div4{
+	#div2,#div3,#div4,#div5,#div6{
 		width:150px;
 		height:40px;
-		color: royalblue;
+		color:red;
 		border-radius:40px;
 		background: #BBBBBB;
 		text-align: center;
@@ -29,6 +30,12 @@
 		margin:10px auto;
 		
 	           }
+	.div0{margin-top:40px;}
+	#div2:hover{color:#0B2BE5;}
+	#div3:hover{color:#0B2BE5;}
+	#div4:hover{color:#0B2BE5;}
+	#div5:hover{color:#0B2BE5;}
+	#div6:hover{color:#0B2BE5;}
 	
 	</style>
 </head>
@@ -39,19 +46,29 @@
 		111
 	</span>
   </div>
-  <div id="div2">
-      <span>计时器清零</span>
-  </div>
-  <div id="div3">
-      <span>计时器开始</span>
-  </div>
-  <div id="div4">
-      <span> 返 回</span>
-  </div>
+ <div class="div0">
+     <div id="div2">
+        <span>计时器清零</span>
+     </div>
+     <div id="div3">
+        <span>计时器开始</span>
+     </div>
+     <div id="div5">
+        <span> 暂 停</span>
+     </div>
+     <div id="div6">
+        <span> 继 续</span>
+     </div>
+     <div id="div4">
+        <span> 返 回</span>
+     </div>
+ </div>
  </body>
 <script>
 	
 	window.onload=function(){
+		var timer1=null;
+		var timer2=null;
 		var bkj=document.getElementById("kk");
 		function getDate()
 		  {
@@ -92,16 +109,27 @@
 		var div2=document.getElementById("div2");
 		var div3=document.getElementById("div3");
 		var div4=document.getElementById("div4");
+		var div5=document.getElementById("div5");
+		var div6=document.getElementById("div6");
+		var scd=0;var mut=0;var hur=0;
+		var run=0;var fist=1;var stop=0;var back=0;//开关
 		div2.onclick=function(){
 			
 			bkj.innerHTML="00:00:00";
 			clearInterval(timer1);
 			clearInterval(timer2);
-		} 
+			scd=0;mut=0;hur=0;
+			fist=1;
+			stop=0;
+			back=1;
+			       div2.style.color="#0B2BE5";
+				   div3.style.color="red";
+				   div4.style.color="red";
+				   div5.style.color="red";
+				   div6.style.color="red";
+		     }
 		function settime(){
-				  var scd=0; 
-			          var mut=0;
-			          var hur=0;
+				  
 				  scd=scd+1;
 				  if(scd<10){
 					var time=hur+":"+mut+":"+"0"+scd;
@@ -116,13 +144,13 @@
 					  mut=mut+1;
 					  scd=00;	
 				  }
-				  if(mut<10 && scd<10){
+				  if(mut<10 && scd<=10){
 						               
 						          var time=hur+":"+"0"+mut+":"+"0"+scd;
 					              bkj.innerHTML=time;
 					            }
 				  if(mut<10){
-					  if(scd>=10){
+					  if(scd>10){
 					  var time="0"+hur+":"+mut+":"+scd;
 					              bkj.innerHTML=time;
 					  }
@@ -136,7 +164,7 @@
 						          var time="0"+hur+":"+"0"+mut+":"+"0"+scd;
 					              bkj.innerHTML=time;
 					            }
-				  if(mut<10 && scd>10 && hur<10){
+				  if(mut<10 && scd>=10 && hur<10){
 						               
 						          var time="0"+hur+":"+"0"+mut+":"+scd;
 					              bkj.innerHTML=time;
@@ -152,17 +180,71 @@
 					   var time="0"+hur+":"+mut+":"+scd;
 					   bkj.innerHTML=time;
 						  }
-					                   }
-				           }
-		                  }
-		div3.onclick=function(){
-			  timer2=setInterval(function(){settime();},1000)
-		}
+					}
+				  }
+		       }
+		   div3.onclick=function(){
+			   
+			   if(fist==1){
+				scd=0;mut=0;hur=0;
+			    timer2=setInterval(function(){settime()},1000);
+			    clearInterval(timer1);
+			    run=1;
+			    fist=0;
+				stop=0;
+				back=1;
+				   div2.style.color="red";
+				   div3.style.color="#0B2BE5";
+				   div4.style.color="red";
+				   div5.style.color="red";
+				   div6.style.color="red";
+			            }
+		         }
 	       div4.onclick=function()
-	        {
-		  timer1=setInterval(function(){getDate()},1000); 
-		  clearInterval(timer2);
+	        { 
+			   if(back==1){
+		      timer1=setInterval(function(){getDate()},1000); 
+		      clearInterval(timer2);
+		      scd=0;mut=0;hur=0;
+			  fist=1;
+			  stop=0;
+				   div2.style.color="red";
+				   div3.style.color="red";
+				   div4.style.color="#0B2BE5";
+				   div5.style.color="red";
+				   div6.style.color="red";
+			   }
 	        }
+		  div5.onclick=function(){
+			  if(run==1){
+			  clearInterval(timer2);
+			  stop=1;
+			  fist=1;
+			  back=1;
+				   div2.style.color="red";
+				   div3.style.color="red";
+				   div4.style.color="red";
+				   div5.style.color="#0B2BE5";
+				   div6.style.color="red";
+				  }
+		                      }
+		  div6.onclick=function(){
+			 if(stop==1){
+			  timer2=setInterval(function(){settime()},1000);
+				 stop=0;
+				 fist=1;
+				 back=1;
+				   div2.style.color="red";
+				   div3.style.color="red";
+				   div4.style.color="red";
+				   div5.style.color="red";
+				   div6.style.color="#0B2BE5";
+			   }
+		                    }
+		    
+	
 	}
+	 
+	
 </script>
 </html>
