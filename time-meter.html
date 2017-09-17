@@ -33,7 +33,7 @@
 	</style>
 </head>
 <body>
-<div id="div0">
+
   <div class="div1">
 	<span id="kk">
 		111
@@ -45,7 +45,9 @@
   <div id="div3">
       <span>计时器开始</span>
   </div>
-</div>
+  <div id="div4">
+      <span> 返 回</span>
+  </div>
  </body>
 <script>
 	
@@ -89,6 +91,7 @@
 		timer=setInterval(function(){getDate()},1000);
 		var div2=document.getElementById("div2");
 		var div3=document.getElementById("div3");
+		var div4=document.getElementById("div4");
 		div2.onclick=function(){
 			
 			bkj.innerHTML="00:00:00";
@@ -154,6 +157,10 @@
 				 
 			  },1000)
 		}
+	      div4.onclick=function()
+	      {
+		  timer=setInterval(function(){getDate()},1000);    
+	      }
 	}
 	
 	
