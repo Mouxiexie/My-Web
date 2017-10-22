@@ -1,13 +1,15 @@
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>我的网站</title>
 
- <link rel="stylesheet" href="https://mouxiexie.github.io/My-Web/wode.css"/>
+ <link rel="stylesheet" href="wode.css"/>
 </head>
 
 <body >
-<div id="top">
+
+  <div id="top" style="position: absolute;">
      <div id="background">
        <li><a href="#"><img src="https://github.com/Mouxiexie/img/blob/master/M1.jpg?raw=true"/></a></li>
        <li><a href="#"><img src="https://github.com/Mouxiexie/img/blob/master/M2.jpg?raw=true"/></a></li>
@@ -21,7 +23,7 @@
 			<h1>welcome my web</h1>
 		</div>
 		
-	<div id="top-top-mid">
+	    <div id="top-top-mid">
 			<ul id="mmk">
 				<li id="ka0">
 		           <div id="kka0"> 
@@ -84,13 +86,17 @@
 				   </div>
 				</li>
 			</ul>
-       </div>
+        </div>
 		<div id="discover">
 		    <button id="but1" type="button"></button>
-			<input id="inp" value="我的故事" type="text"></input>
+			<input id="inp" value="我的故事" type="text">
 			<button id="but2" type="button">搜索</button>
 			</div>
-		<div id="top-top-right"></div>
+		<div id="top-top-right">
+			<h3 id="zhuce"><a href="#">注册</a></h3>
+			<p id="wen">/</p>
+			<h3 id="denglu"><a href="#">登录</a></h3>
+		</div>
 	</div>
 	<div id="top-left">
 	  <ul id="li-s">
@@ -113,12 +119,30 @@
 		
 	</div>
 </div>
-<div id="body">
+  <div style="width:300px;margin:auto;"><!让里面的浮动DIV居中，让外面加的DIv居中就行,>
+    <div id="deng">	      
+	    <p>用户名：</p>
+		<p> <input   type="text" value="请输入......"></p>
+        <p>密码：</p>
+        <p> <input type="text" value="请输入......"></p>
+		<button id="it1">登录</button>
+ 	    
 	
-</div>
+    </div>
+    <div id="zhu">
+	    <p>用户名：</p>
+		<p> <input  type="text" value="请输入......"></p>
+        <p>密码：</p>
+        <p> <input  type="text" value="请输入......"></p>
+		<button id="it2">注册</button>
+ 	    
+   </div>
+ </div>
+
+</body>
 <script>
 	window.onload=function()
-	{
+{
 		var Top=document.getElementById("top");
 		var Topleft=document.getElementById("top-left");
 		var Ul=document.getElementById("li-s");
@@ -209,8 +233,39 @@
 			    Lis[now].style.color="red";
 			    Lias[now].style.display="block";
 		} 
-//菜单****************************************************************
+//登录 注册**************************************************************
+		var Deng=document.getElementById('deng');
+		var Zhu=document.getElementById('zhu');
+		var Zhuce=document.getElementById("zhuce");
+		var Denglu=document.getElementById('denglu');
+		var It1=document.getElementById('it1');
+		var It2=document.getElementById('it2');
+		Zhuce.onclick=function()
+		{
+			Zhu.style.display='block';
+			Top.style.opacity="0.5"
+			Deng.style.display='none';
+			//alert("1")
+		}
+		Denglu.onclick=function()
+		{
+			//alert("2")
+			Deng.style.display='block';
+			Zhu.style.display='none';
+			Top.style.opacity="0.5"
+		}
+		It1.onclick=function()
+		{
+			Deng.style.display='none';
+			Top.style.opacity="";
+		}
+		It2.onclick=function()
+		{
+			Zhu.style.display='none';
+			Top.style.opacity="";
+		}
 }
+	
 	</script>
-</body>
+
 </html>
