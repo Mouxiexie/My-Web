@@ -16,10 +16,10 @@ button{outline:none;}
 #top-top-mid li a{text-decoration:none;}
 #top-top-mid li{display: inline-block;}
 #kka0 a,#kka1 a,#kka2 a,#kka3 a,#kka4 a{color: white;font-weight: bold;}
-#discover{float: left;margin-top:12px;opacity: 0.8;overflow: hidden;margin-left: 10px;}
+#discover{float: left;margin-top:12px;opacity: 0.8;overflow: hidden;margin-left: 10px;height: 50px;width: 470px;}
 #but2{width: 50px;height: 34px; border-bottom-right-radius: 40px;border-top-right-radius:40px;float: left;border: 2px solid #EBA510;background: #DBD8D8;}
 #inp{margin-left: 0px;
-	 height: 34px;
+	 height: 30px;
 	 width: 400px;
 	 float: left;
 	 background: #DBD8D8;
@@ -108,9 +108,10 @@ button{outline:none;}
 #ka4:hover #ka-4{display:block;}
 
 .ka1 a:hover{background: #2FDC5E;}
-
-
-
-
-
+/*登录  注册*/
+#top-top-right{width:200px;height: 50px;float: left;line-height: 50px;margin-left: 150px;}
+#denglu{float: left;}
+#zhuce{float: left;}
+#wen{float: left;}
+#zhu,#deng{width:300px; height:200px; border:#030303 solid 2px; position: absolute; display:none;text-align: center;background: #B5B5B5;top:20%;}
 
