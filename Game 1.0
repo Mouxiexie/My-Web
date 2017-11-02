@@ -7,14 +7,14 @@
 	*{margin: 0;
 	padding: 0;}
 	.gamediv{
-		background: url(img/bg.jpg);
+		background: url(https://mouxiexie.github.io/My-Web/bg.jpg);
 		background-size: cover;
 		width:100%;
 		height:600px;
 		overflow: hidden;
 	}
 	.score{
-		background-image: url(img/mark.png);
+		background-image: url(https://mouxiexie.github.io/My-Web/mark.png);
 		
 		width:100px;
 		height:100px;
@@ -115,7 +115,7 @@
 			//game.appendChild("<img src='img/"+img+".png' width="50px" height="50px" style="left:"+left+"px; top:10px;"/>");
 			var oui=document.createElement('img');
 			oui.style="left:"+left+"px; top:20px;"
-			oui.src='img/'+img+'.png';
+			oui.src='https://mouxiexie.github.io/My-Web/'+img+'.png';
 			game.appendChild(oui);
 		  }
 		}
