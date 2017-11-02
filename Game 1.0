@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>game</title>
+<style>
+	*{margin: 0;
+	padding: 0;}
+	.gamediv{
+		background: url(img/bg.jpg);
+		background-size: cover;
+		width:100%;
+		height:600px;
+		overflow: hidden;
+	}
+	.score{
+		background-image: url(img/mark.png);
+		
+		width:100px;
+		height:100px;
+		background-size:100px 100px;
+		position: fixed;
+		right: 20px;
+		bottom: 50px;
+		font-size: 40px;
+		line-height:80px;;
+		color: red;
+		cursor: pointer;
+	    
+	}
+	.contorl{
+		width: 100%;
+		height:50px;
+		position: fixed;
+		bottom: 0px;
+		}
+	.failorsuccess{
+		width: 500px;
+		height: 350px;
+		margin: 0 auto;
+		background: white;
+		position: relative;
+		cursor: pointer;
+		top: 50px;
+		text-align: center;
+		line-height: 100px;
+		display: none;
+	}
+	.btn{
+		width: 130px;
+		height: 50px;
+		text-align: center;
+		line-height: 50px;
+		cursor: pointer;
+		float: left;
+		border: #0D0C0C solid 2px;
+	
+	}
+	.game{
+		position: relative;
+		margin: 0 auto;
+	}
+	.game img{
+		position: absolute;
+	}
+	</style>
+</head>
+<body>
+ <div class="gamediv" id="gamediv">
+   <div class="game" id="game"></div>
+   <div class="failorsuccess" id="failorsuccess">
+   
+   <h1>game over!</h1>
+     <h3>重新开始</h3>
+   </div>
+   <div class="score" id="score">0</div>
+   <div class="contorl" id="contorl">
+ 	<div class="btn" id="start">开始游戏</div>
+ 	<div class="btn" id="stop">暂停游戏</div>
+ 	<div class="btn" id="come">继续游戏</div>
+ 	<div class="btn" id="quick">加速游戏</div>
+   </div>
+ </div>
+</body>
+<script>
+	window.onload=function()
+{   
+    var flag=true;
+	var score=0;
+	var chars=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+	
+	var start=document.getElementById('start');
+		start.onclick=function()
+		{    
+			document.getElementById('contorl').style.display="none";//游戏开始控制隐藏面板
+			window.setInterval(getdom,1000);
+			window.setInterval(down,1000);
+			//alert(getdom)
+
+		};
+ 
+
+	 
+		var getdom=function()
+		 {
+		  if(flag)
+		  {
+			var random=Math.floor(Math.random()*26);//产生0~26的随机数
+			//return random;
+			//alert(random);
+			var img=chars[random];
+			 console.info(img);
+			var game=document.getElementById('game');
+			var left=Math.floor(Math.random()*700+30);
+			//game.appendChild("<img src='img/"+img+".png' width="50px" height="50px" style="left:"+left+"px; top:10px;"/>");
+			var oui=document.createElement('img');
+			oui.style="left:"+left+"px; top:20px;"
+			oui.src='img/'+img+'.png';
+			game.appendChild(oui);
+		  }
+		}
+	
+		function down ()
+		{
+	     if(flag)
+		  {
+			//var game=document.getElementById('game');
+			var imgs=document.getElementsByTagName('img');
+			//alert(imgs.length);
+			for( var i=0; i<imgs.length; i++)
+				{
+					var img=imgs[i];
+					if(img.nodeType==1)
+						{
+							var top=parseInt(img.style.top);
+							if(top<800)
+								{
+									img.style.top=top+50+"px";
+								}
+							else
+								{
+									img.remove();
+									score=score-10;
+									var mark=document.getElementById('score');
+									mark.innerHTML=''+score+'';
+									if(score==-100)
+										{
+											document.getElementById('failorsuccess').style.display='block';
+											flag=false;
+										}
+								}
+						}
+				}
+			  
+		  }
+		}
+//用户按键 开始游戏
+		window.onkeyup=function(event)
+		{
+			var  eve=event||window.event;//兼容
+			var code=eve.keyCode;//获取键盘上的keyCode对照表值；得到的是一个数字
+			//alert(code);
+			var imgs=document.getElementsByTagName('img');
+			for(var i=0; i<imgs.length;i++)
+				{
+					var img=imgs[i];
+					 if(img.nodeType==1)
+						 {
+							 var imgsrc=img.src.split("/");//将文件路径按照“/”进行切割；
+							 var  name=imgsrc[imgsrc.length-1].split(".")[0];
+							 //imgsrc[imgsrc.length-1]得到最后 R.png 这个文件；再切割一次 取其中R；
+							 if(name==chars[code-65])
+								 {
+									 img.remove();
+									 score=score+10;
+									 var mark=document.getElementById('score');
+									 mark.innerHTML=''+score+'';
+									 
+								 }
+									
+						 }
+				}
+			
+		};
+	
+		
+	//重新开始
+		document.getElementById('failorsuccess').onclick=function()
+		{
+			location.reload();
+		}
+	//暂停游戏
+		document.getElementById('stop').onclick=function(){
+			flag=false;
+		}
+	//继续游戏
+		document.getElementById('come').onclick=function(){
+			flag=true;
+			window.setInterval(getdom,1000);
+			window.setInterval(down,1000);
+			
+		}
+	//显示控制面板
+		if(start.onclick){
+		document.getElementById('gamediv').ondblclick=function(){
+			document.getElementById('contorl').style.display="block";
+		}
+		};
+}
+
+	</script>
+</html>
