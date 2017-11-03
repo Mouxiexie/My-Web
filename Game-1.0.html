@@ -140,7 +140,7 @@
 								}
 							else
 								{
-									img.remove();
+									img.removechild();
 									score=score-10;
 									var mark=document.getElementById('score');
 									mark.innerHTML=''+score+'';
@@ -172,7 +172,7 @@
 							 //imgsrc[imgsrc.length-1]得到最后 R.png 这个文件；再切割一次 取其中R；
 							 if(name==chars[code-65])
 								 {
-									 img.remove();
+									 img.removechild();
 									 score=score+10;
 									 var mark=document.getElementById('score');
 									 mark.innerHTML=''+score+'';
