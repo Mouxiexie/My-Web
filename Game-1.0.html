@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Game-1.0</title>
+<title>game</title>
 <style>
 	*{margin: 0;
 	padding: 0;}
@@ -10,7 +10,7 @@
 		background: url(https://mouxiexie.github.io/My-Web/bg.jpg);
 		background-size: cover;
 		width:100%;
-		height:800px;
+		background-size: 100% 100%;    
 		overflow: hidden;
 	}
 	.score{
@@ -32,7 +32,7 @@
 		width: 100%;
 		height:50px;
 		position: fixed;
-		bottom:5%;
+		bottom: 0px;
 		}
 	.failorsuccess{
 		width: 500px;
@@ -82,9 +82,21 @@
    </div>
  </div>
 </body>
-<script type="text/javascript">
+<script>
 	window.onload=function()
 {   
+		
+	//适应窗口
+	var he=document.documentElement.clientHeight;
+		//alert(he);
+	document.getElementById('gamediv').style.height=he+"px";
+	window.onresize=function(){
+		var he=document.documentElement.clientHeight;
+		//alert(he);
+	    document.getElementById('gamediv').style.height=he+"px";
+	}
+		
+		
     var flag=true;
 	var score=0;
 	var chars=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
@@ -103,7 +115,6 @@
 	 
 		var getdom=function()
 		 {
-		 
 		  if(flag)
 		  {
 			var random=Math.floor(Math.random()*26);//产生0~26的随机数
@@ -115,10 +126,9 @@
 			var left=Math.floor(Math.random()*700+30);
 			//game.appendChild("<img src='img/"+img+".png' width="50px" height="50px" style="left:"+left+"px; top:10px;"/>");
 			var oui=document.createElement('img');
-			 oui.style="left: "+left+"px; top:20px; width：60px; height:60px;";
-			 oui.src='https://mouxiexie.github.io/My-Web/'+img+'.png';
-			 game.appendChild(oui);
-			 //game.innerHTML="<img src='https://mouxiexie.github.io/My-Web/"+img+".png';style='left:"+left+"px; top:20px;'/>"
+			oui.style.left=""+left+"px" 
+			oui.src='https://mouxiexie.github.io/My-Web/'+img+'.png';
+			game.appendChild(oui);
 		  }
 		}
 	
@@ -134,7 +144,8 @@
 					var img=imgs[i];
 					if(img.nodeType==1)
 						{
-							var top=parseInt(img.style.top);
+							var top=img.offsetTop;
+							
 							if(top<800)
 								{
 									img.style.top=top+50+"px";
