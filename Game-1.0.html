@@ -10,6 +10,7 @@
 		background: url(https://mouxiexie.github.io/My-Web/bg.jpg);
 		background-size: cover;
 		width:100%;
+		height: 800px;
 		background-size: 100% 100%;    
 		overflow: hidden;
 	}
@@ -33,7 +34,6 @@
 		height:50px;
 		position: fixed;
 		bottom: 0px;
-		left:50%;
 		}
 	.failorsuccess{
 		width: 500px;
@@ -54,7 +54,9 @@
 		line-height: 50px;
 		cursor: pointer;
 		float: left;
-		border: #0D0C0C solid 2px;
+		border-top: #0D0C0C solid 2px;
+		border-bottom: #0D0C0C solid 2px;
+		border-right: #0D0C0C solid 2px;
 	
 	}
 	.game{
@@ -64,6 +66,35 @@
 	.game img{
 		position: absolute;
 	}
+	#quick{
+		position: relative;
+	}
+	.faster{
+		position: absolute;
+		top:-52px;
+		left:-1px;
+		width: 132px;
+		height: 50px;
+		cursor: pointer;
+		background-color: #D6D6D6;
+		display: none;
+	}
+	.one:hover{ background-color: #9B9B9B;}
+	.two:hover{ background-color: #9B9B9B;}
+	.three:hover{ background-color: #9B9B9B;}
+	
+	#quick:hover .faster{display: block;}
+	.show{
+		height: 100px;
+		width:800PX;
+		left: 15px;
+		bottom: 100px;
+		background-color: #636363;
+		opacity: 0.3;
+		position: fixed;
+		display: none;
+	}
+	
 	</style>
 </head>
 <body>
@@ -79,15 +110,25 @@
  	<div class="btn" id="start">开始游戏</div>
  	<div class="btn" id="stop">暂停游戏</div>
  	<div class="btn" id="come">继续游戏</div>
- 	<div class="btn" id="quick">加速游戏</div>
+ 	<div class="btn" id="quick">
+ 	  <span >设置游戏</span>
+ 	  <div class="faster" id="faster">
+ 	  	 <div class="three" id="three"><span>困难</span></div>
+ 	  </div>
+ 	  
+ 	</div>
    </div>
+   <div class="show" id="show"></div>
  </div>
 </body>
 <script>
+	
+	
 	window.onload=function()
 {   
 		
 	//适应窗口
+		/*
 	var he=document.documentElement.clientHeight;
 		//alert(he);
 	document.getElementById('gamediv').style.height=he+"px";
@@ -96,29 +137,50 @@
 		//alert(he);
 	    document.getElementById('gamediv').style.height=he+"px";
 	}
-		
-		
+		*/
+	var speed=2000;	
     var flag=true;
 	var score=0;
 	var chars=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 	
 	var start=document.getElementById('start');
 		start.onclick=function()
-		{    
-			document.getElementById('contorl').style.display="none";//游戏开始控制隐藏面板
-			window.setInterval(getdom,1000);
-			window.setInterval(down,1000);
+		{  
+			  //bgm
+			var audio = document.createElement('audio');
+            audio.src="Adele - Hello.mp3";
+			audio.autoplay = 'autoplay';
+            document.body.appendChild(audio);
+			//滚动条自动滚动到底部
+		    var h = document.documentElement.scrollHeight || document.body.scrollHeight;
+            window.scrollTo(h,h);
+			//游戏开始控制隐藏面板
+		     document.getElementById('contorl').style.display="none";
+			//设置游戏
+			 /*困难*/
+			     document.getElementById('three').onclick=function(){
+				 speed=1000;
+				 window.clearInterval(timer7);
+				 window.clearInterval(timer8);
+				 var timer5=window.setInterval(getdom,speed); //设置timer1  方便后面关闭定时器互不干扰
+			     var timer6=window.setInterval(down,speed);
+			   }
+			
+			 /*正常开始*/
+			var timer7=window.setInterval(getdom,speed);
+			var timer8=window.setInterval(down,speed);
 			//alert(getdom)
-
 		};
  
 
-	 
+	    
 		var getdom=function()
 		 {
 		  if(flag)
-		  {
-			var random=Math.floor(Math.random()*26);//产生0~26的随机数
+		  { 
+			
+				var random=Math.floor(Math.random()*26);//产生0~26的随机数
+			
 			//return random;
 			//alert(random);
 			var img=chars[random];
@@ -127,7 +189,7 @@
 			var left=Math.floor(Math.random()*700+30);
 			//game.appendChild("<img src='img/"+img+".png' width="50px" height="50px" style="left:"+left+"px; top:10px;"/>");
 			var oui=document.createElement('img');
-			oui.style.left=""+left+"px" 
+			oui.style.left=""+left+"px";
 			oui.src='https://mouxiexie.github.io/My-Web/'+img+'.png';
 			game.appendChild(oui);
 		  }
@@ -150,6 +212,9 @@
 							if(top<800)
 								{
 									img.style.top=top+50+"px";
+									if(top==550){
+									   document.getElementById('show').style.display="block";
+									   }
 								}
 							else
 								{
@@ -169,6 +234,9 @@
 		  }
 		}
 //用户按键 开始游戏
+		
+		
+		
 		window.onkeyup=function(event)
 		{
 			var  eve=event||window.event;//兼容
@@ -180,6 +248,9 @@
 					var img=imgs[i];
 					 if(img.nodeType==1)
 						 {
+							 var top=img.offsetTop;
+							 if(top==600)
+							 {
 							 var imgsrc=img.src.split("/");//将文件路径按照“/”进行切割；
 							 var  name=imgsrc[imgsrc.length-1].split(".")[0];
 							 //imgsrc[imgsrc.length-1]得到最后 R.png 这个文件；再切割一次 取其中R；
@@ -191,13 +262,13 @@
 									 mark.innerHTML=''+score+'';
 									 
 								 }
-									
+							 }
+							 
 						 }
 				}
 			
 		};
 	
-		
 	//重新开始
 		document.getElementById('failorsuccess').onclick=function()
 		{
@@ -210,10 +281,14 @@
 	//继续游戏
 		document.getElementById('come').onclick=function(){
 			flag=true;
-			window.setInterval(getdom,1000);
-			window.setInterval(down,1000);
-			
+			window.clearInterval(timer5);
+		    window.clearInterval(timer6);
+			window.clearInterval(timer7);
+			window.clearInterval(timer8);
+			window.setInterval(getdom,speed);
+			window.setInterval(down,speed);	
 		}
+	
 	//显示控制面板
 		if(start.onclick){
 		document.getElementById('gamediv').ondblclick=function(){
