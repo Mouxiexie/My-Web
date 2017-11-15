@@ -256,6 +256,11 @@
 									score=score-10;
 									var mark=document.getElementById('score');
 									mark.innerHTML=''+score+'';
+									if(score>200)
+									       {
+									       audio.src=bgms[0];
+									  
+									       }
 									if(score==-100)
 										{
 											document.getElementById('failorsuccess').style.display='block';
