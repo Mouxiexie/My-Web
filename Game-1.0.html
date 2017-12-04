@@ -256,19 +256,19 @@
 									score=score-10;
 									var mark=document.getElementById('score');
 									mark.innerHTML=''+score+'';
-									if(score>100)
+									if(score==100)
 									       {
 									       audio.src=bgms[0];
 										       audio.play();
 										       break;
 									       }
-									else if(score>200)
+									else if(score==200)
 									       {
 									       audio.src=bgms[1];
 										       audio.play();
 										       break;
 									       }
-									else if(score>300)
+									else if(score==300)
 									       {
 									       audio.src=bgms[2];
 									               audio.play();  
